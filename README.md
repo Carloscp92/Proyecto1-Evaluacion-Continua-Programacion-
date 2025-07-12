@@ -1,2 +1,2 @@
-# Proyecto1-Evaluaci-n-Continua-Programaci-n-
+# Proyecto1-Evaluacion-Continua-Programacion-
 Proyecto 1 para la evaluación continua de la asignatura de programación
