@@ -18,7 +18,7 @@ public class Main {
             System.out.println("1.Gestión de Clientes");
             System.out.println("2.Gestión de Instrumentos");
             System.out.println("3.Gestión de Ventas");
-            System.out.println("Introduce una opcion:");
+            System.out.println("Introduce una opción:");
 
                 try {
                     opcion = sc.nextInt();
@@ -38,10 +38,10 @@ public class Main {
                             submenuVentas(sc, gVentas, gClientes, gInstrumentos);
 
                         }
-                        default -> System.out.println("La opcion no es valida");
+                        default -> System.out.println("La opción no es válida");
                     }
                 } catch (InputMismatchException e) {
-                    System.out.println("Error: debes introducir un número.");
+                    System.out.println("No es válido: Debes introducir un número.");
                     sc.nextLine();
                 }
         }while(opcion!=0);
@@ -54,7 +54,7 @@ private static void submenuClientes(Scanner sc, GestionClientes gClientes){
     int opcion=-1;
     do {
         System.out.println("MENU GESTIÓN DE CLIENTES");
-        System.out.println("0.Volver al Menu Principal");
+        System.out.println("0.Volver al Menú Principal");
         System.out.println("1.Alta de Cliente");
         System.out.println("2.Baja de Cliente");
         System.out.println("3.Buscar Cliente por DNI");
@@ -69,20 +69,20 @@ private static void submenuClientes(Scanner sc, GestionClientes gClientes){
 
                     case 1 -> {
                         System.out.println("===ALTA CLIENTE===");
-                        System.out.print("Introduzca un nombre:");
+                        System.out.print("Introduce un nombre:");
                         String nombre = sc.nextLine();
-                        System.out.print("Introduzca telefono:");
+                        System.out.print("Introduce télefono:");
                         String telefono = sc.nextLine();
-                        System.out.print("Introduzca email:");
+                        System.out.print("Introduce email:");
                         String email = sc.nextLine();
-                        System.out.print("Introduzca dni:");
+                        System.out.print("Introduce dni:");
                         String dni ="";
                         boolean entrada = false;
                         while(!entrada){
                             dni= sc.nextLine();
                             if(gClientes.existeDni(dni)){
                                 System.out.println("ya existe un cliente con ese dni");
-                                System.out.println("Introduzca uno Valido:");
+                                System.out.println("Introduce uno Válido:");
                             }else {
                                 entrada = true;
                             }
@@ -92,18 +92,18 @@ private static void submenuClientes(Scanner sc, GestionClientes gClientes){
                     }
                     case 2 -> {
                         System.out.println("===BAJA CLIENTE===");
-                        System.out.print("Introduzca dni:");
+                        System.out.print("Introduce dni:");
                         String dni = sc.nextLine();
                         boolean bajaExitosa = gClientes.bajaCliente(dni);
                         if (bajaExitosa) {
-                            System.out.println("Cliente dado de baja con exito");
+                            System.out.println("Cliente dado de baja con éxito");
                         } else {
                             System.out.println("Cliente no encontrado");
                         }
                     }
                     case 3 -> {
                         System.out.println("===BUSCAR CLIENTE===");
-                        System.out.print("Introduzca dni:");
+                        System.out.print("Introduce dni:");
                         String dni = sc.nextLine();
                         Cliente clienteBuscado = gClientes.buscarClienteporDni(dni);
                         if (clienteBuscado == null) {
@@ -114,7 +114,7 @@ private static void submenuClientes(Scanner sc, GestionClientes gClientes){
                     }
                     case 4 -> {
                         System.out.println("===MODIFICAR DATOS DEL CLIENTE===");
-                        System.out.print("Introduzca dni:");
+                        System.out.print("Introduce dni:");
                         String dni = sc.nextLine();
                         Cliente modificarCliente = gClientes.modificarCliente(dni);
                         if (modificarCliente == null) {
@@ -125,7 +125,7 @@ private static void submenuClientes(Scanner sc, GestionClientes gClientes){
                                 System.out.println("¿Que dato quiere modificar:?");
                                 System.out.println("0.Volver");
                                 System.out.println("1.Nombre");
-                                System.out.println("2.Telefono");
+                                System.out.println("2.Télefono");
                                 System.out.println("3.Email");
 
                                     try {
@@ -137,24 +137,24 @@ private static void submenuClientes(Scanner sc, GestionClientes gClientes){
                                                 System.out.println("Introduce nuevo nombre:");
                                                 String nuevoNombre = sc.nextLine();
                                                 modificarCliente.setNombre(nuevoNombre);
-                                                System.out.println("Nombre modificado con exito");
+                                                System.out.println("Nombre modificado con éxito");
                                             }
                                             case 2 -> {
                                                 System.out.println("Introduce nuevo telefono:");
                                                 String nuevoTelefono = sc.nextLine();
                                                 modificarCliente.setTelefono(nuevoTelefono);
-                                                System.out.println("Telefono modificado con exito");
+                                                System.out.println("Telefono modificado con éxito");
                                             }
                                             case 3 -> {
                                                 System.out.println("Introduce nuevo email:");
                                                 String nuevoEmail = sc.nextLine();
                                                 modificarCliente.setEmail(nuevoEmail);
-                                                System.out.println("Email modificado con exito");
+                                                System.out.println("Email modificado con éxito");
                                             }
-                                            default -> System.out.println("La opcion no es valida");
+                                            default -> System.out.println("La opción no es válida");
                                         }
                                     } catch (InputMismatchException e) {
-                                        System.out.println("Error: debes introducir un numero ");
+                                        System.out.println("No es válido: Debes introducir un número ");
                                         sc.nextLine();
                                     }
                             } while (opcionSubmenu != 0);
@@ -164,10 +164,10 @@ private static void submenuClientes(Scanner sc, GestionClientes gClientes){
                         System.out.println("===LISTADO DE CLIENTES===");
                         gClientes.listarClientes();
                     }
-                    default -> System.out.println("Opción no valida");
+                    default -> System.out.println("Opción no válida");
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Error: debes introducir un número.");
+                System.out.println("No es válido: Debes introducir un número.");
                 sc.nextLine();
             }
     }while(opcion!=0);
@@ -188,7 +188,7 @@ private static void submenuInstrumentos(Scanner sc, GestionInstrumentos gInstrum
                     opcion = sc.nextInt();
                     sc.nextLine();
                     switch (opcion) {
-                        case 0 -> System.out.println("Volviendo al Menu Principal");
+                        case 0 -> System.out.println("Volviendo al Menú Principal");
 
                         case 1 -> {
                             System.out.println("===ALTA INSTRUMENTO===");
@@ -205,7 +205,7 @@ private static void submenuInstrumentos(Scanner sc, GestionInstrumentos gInstrum
                                 identificador = sc.nextLine();
                                 if (gInstrumentos.existeIdentificador(identificador)) {
                                     System.out.println("Ya existe un instrumento con ese identificador");
-                                    System.out.println("Introduzca uno valido:");
+                                    System.out.println("Introduce uno válido:");
                                 } else {
                                     idValido = true;
                                 }
@@ -222,13 +222,13 @@ private static void submenuInstrumentos(Scanner sc, GestionInstrumentos gInstrum
                                         Instrumento nuevoInstrumento = new Instrumento(nombre, marca, modelo, identificador, precio);
                                         boolean altaExitosa = gInstrumentos.altaInstrumento(nuevoInstrumento);
                                         if (altaExitosa) {
-                                            System.out.println("Intrumento registrado con exito");
+                                            System.out.println("Intrumento registrado con éxito");
                                         } else {
                                             System.out.println("El instrumento ya esta registrado");
                                         }
                                     }
                                 } catch (InputMismatchException e) {
-                                    System.out.println("Error: Debes Introducir un precio");
+                                    System.out.println("No es valido: Debes Introducir un precio");
                                 }
                                 sc.nextLine();
                             }
@@ -239,7 +239,7 @@ private static void submenuInstrumentos(Scanner sc, GestionInstrumentos gInstrum
                             String identificador = sc.nextLine();
                             boolean bajaExitosa = gInstrumentos.bajaInstrumento(identificador);
                             if (bajaExitosa) {
-                                System.out.println("Instrumento eliminado del registro con exito");
+                                System.out.println("Instrumento eliminado del registro con éxito");
                             } else {
                                 System.out.println("El instrumento no se encuentra en el registro");
                             }
@@ -257,7 +257,7 @@ private static void submenuInstrumentos(Scanner sc, GestionInstrumentos gInstrum
                         }
                         case 4 -> {
                             System.out.println("===MODIFICAR DATOS INSTRUMENTO===");
-                            System.out.print("Introduzca identificador:");
+                            System.out.print("Introduce identificador:");
                             String identificador = sc.nextLine();
                             Instrumento modificarInstrumento = gInstrumentos.modificarInstrumento(identificador);
                             if (modificarInstrumento == null) {
@@ -280,19 +280,19 @@ private static void submenuInstrumentos(Scanner sc, GestionInstrumentos gInstrum
                                                     System.out.println("Introduce nuevo nombre:");
                                                     String nuevoNombre = sc.nextLine();
                                                     modificarInstrumento.setNombreInstrumento(nuevoNombre);
-                                                    System.out.println("Nombre modificado con exito");
+                                                    System.out.println("Nombre modificado con éxito");
                                                 }
                                                 case 2 -> {
                                                     System.out.println("Introduce nueva marca:");
                                                     String nuevaMarca = sc.nextLine();
                                                     modificarInstrumento.setMarca(nuevaMarca);
-                                                    System.out.println("Marca modificada con exito");
+                                                    System.out.println("Marca modificada con éxito");
                                                 }
                                                 case 3 -> {
                                                     System.out.println("Introduce nuevo modelo:");
                                                     String nuevoModelo = sc.nextLine();
                                                     modificarInstrumento.setModelo(nuevoModelo);
-                                                    System.out.println("Modelo modificado con exito");
+                                                    System.out.println("Modelo modificado con éxito");
                                                 }
                                                 case 4 -> {
                                                     boolean entradaInterior=false;
@@ -305,18 +305,18 @@ private static void submenuInstrumentos(Scanner sc, GestionInstrumentos gInstrum
                                                             } else {
                                                                 entradaInterior= true;
                                                                 modificarInstrumento.setPrecio(nuevoPrecio);
-                                                                System.out.println("Precio modificado con exito");
+                                                                System.out.println("Precio modificado con éxito");
                                                             }
                                                         } catch (InputMismatchException e) {
-                                                            System.out.println("Error: Debes introducir un precio");
+                                                            System.out.println("No es válido: Debes introducir un precio");
                                                         }
                                                         sc.nextLine();
                                                     }
                                                 }
-                                                default -> System.out.println("La opcion no es valida");
+                                                default -> System.out.println("La opcion no es válida");
                                             }
                                         } catch (InputMismatchException e) {
-                                            System.out.println("Error: Debes introducir un numero");
+                                            System.out.println("No es válido: Debes introducir un número");
                                             sc.nextLine();
                                         }
                                 } while (opcionSubmenu != 0);
@@ -326,10 +326,10 @@ private static void submenuInstrumentos(Scanner sc, GestionInstrumentos gInstrum
                             System.out.println("===LISTADO DE INSTRUMENTOS===");
                             gInstrumentos.listarInstrumentos();
                         }
-                        default -> System.out.println("Opción no valida");
+                        default -> System.out.println("Opción no válida");
                     }
                 } catch (InputMismatchException e) {
-                    System.out.println("Error: debes introducir un número.");
+                    System.out.println("No es válido: Debes introducir un número.");
                     sc.nextLine();
                 }
         }while(opcion!=0);
@@ -348,7 +348,7 @@ private static void submenuVentas(Scanner sc, GestionVentas gVentas, GestionClie
                 opcion = sc.nextInt();
                 sc.nextLine();
                 switch (opcion) {
-                    case 0 -> System.out.println("Volviendo al Menu Principal");
+                    case 0 -> System.out.println("Volviendo al Menú Principal");
 
                     case 1 -> {
                         System.out.println("===REALIZAR VENTA===");
@@ -361,14 +361,14 @@ private static void submenuVentas(Scanner sc, GestionVentas gVentas, GestionClie
                         }
                         System.out.println("Introduce la fecha de venta: ");
                         String fechaVenta = sc.nextLine();
-                        System.out.println("Introduce un identificador de Venta, (tiene que tener una letra y un numero)");
+                        System.out.println("Introduce un identificador de Venta, (tiene que tener una letra y un número)");
                         boolean entrada = false;
                         String idVenta= "";
                         while(!entrada) {
                          idVenta = sc.nextLine().toLowerCase();
                             if (gVentas.existeIdVenta(idVenta)) {
                                 System.out.println("Ya existe una venta con ese identificador");
-                                System.out.println("Introduzca nuevo Id de venta:");
+                                System.out.println("Introduce nuevo Id de venta:");
                             }else {
                                 entrada = true;
                             }
@@ -385,7 +385,7 @@ private static void submenuVentas(Scanner sc, GestionVentas gVentas, GestionClie
                                 do {
                                     continuar = sc.nextLine();
                                     if (!continuar.trim().equalsIgnoreCase("si") && !continuar.trim().equalsIgnoreCase("no")) {
-                                        System.out.println("Respuesta no valida, escriba si o no");
+                                        System.out.println("Respuesta no válida, escriba si o no");
                                     }
                                 }while(!continuar.trim().equalsIgnoreCase("si") && !continuar.trim().equalsIgnoreCase("no"));
                                 if (continuar.trim().equalsIgnoreCase("no")){
@@ -398,7 +398,7 @@ private static void submenuVentas(Scanner sc, GestionVentas gVentas, GestionClie
                                 do {
                                     continuar = sc.nextLine();
                                     if (!continuar.trim().equalsIgnoreCase("si") && !continuar.trim().equalsIgnoreCase("no")) {
-                                        System.out.println("Respuesta no valida, escriba si o no");
+                                        System.out.println("Respuesta no válida, escriba si o no");
                                     }
                                 }while(!continuar.trim().equalsIgnoreCase("si") && !continuar.trim().equalsIgnoreCase("no"));
                                 if (continuar.trim().equalsIgnoreCase("no")){
@@ -408,7 +408,7 @@ private static void submenuVentas(Scanner sc, GestionVentas gVentas, GestionClie
                         } while (continuar.trim().equalsIgnoreCase("si"));
                          if(nuevaVenta.tieneInstrumentos()) {
                              gVentas.realizarVenta(nuevaVenta);
-                             System.out.println("Venta realizada con exito. Total: " + nuevaVenta.getTotal());
+                             System.out.println("Venta realizada con éxito. Total: " + nuevaVenta.getTotal());
                          }else {
                              System.out.println("No se añadieron instrumentos. Venta cancelada.");
                          }
@@ -441,13 +441,13 @@ private static void submenuVentas(Scanner sc, GestionVentas gVentas, GestionClie
                         if(gVentas.eliminarVenta(idVenta)==null){
                             System.out.println("No hay niguna venta con este idenficador");
                         }else {
-                            System.out.println("Venta eliminada con exito");
+                            System.out.println("Venta eliminada con éxito");
                         }
                     }
-                    default -> System.out.println("Opción no valida");
+                    default -> System.out.println("Opción no válida");
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Error: debes introducir un número.");
+                System.out.println("No es válido: debes introducir un número.");
                 sc.nextLine();
             }
     }while(opcion!=0);
