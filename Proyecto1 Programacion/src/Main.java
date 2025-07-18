@@ -366,6 +366,10 @@ private static void submenuVentas(Scanner sc, GestionVentas gVentas, GestionClie
                         String idVenta= "";
                         while(!entrada) {
                          idVenta = sc.nextLine().toLowerCase();
+                            if (!idVenta.matches("^[a-z](?:[0-9]|[1-9][0-9])$")) {
+                                System.out.println("Formato inválido. Debe contener solo una letra y un numero del 0-99. Intenta de nuevo:");
+                                continue;
+                            }
                             if (gVentas.existeIdVenta(idVenta)) {
                                 System.out.println("Ya existe una venta con ese identificador");
                                 System.out.println("Introduce nuevo Id de venta:");
