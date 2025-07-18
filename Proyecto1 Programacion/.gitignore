@@ -1,0 +1,9 @@
+### IntelliJ IDEA ###
+*.class
+.idea/
+*.iml
+out/
+*.log
+*.tmp
+### VScode ###
+.vscode/
