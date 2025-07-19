@@ -1,3 +1,11 @@
+/**
+ * Representa un cliente de la tienda, incluyendo su nombre,
+ * DNI, teléfono y correo electrónico.
+ * Proporciona métodos para acceder y modificar estos datos.
+ * @author Carlos Pérez
+ * @version 1.0.0
+ */
+
 public class Cliente {
 
 private String nombre;
@@ -13,6 +21,11 @@ public Cliente(String nombre, String dni, String telefono, String email){
     this.email= email;
     }
 
+    /**
+     * Devuelve informacion en forma de cadena del cliente,
+     * mostrando sus atributos principales de manera legible.
+     * @return Cadena con la información del instrumento.
+     */
     public String toString(){
     return "\nNombre: " + this.nombre  + "\nDni: " + this.dni+ " \nTelefono: " + this.telefono+ "\nEmail: "+ this.email;
     }

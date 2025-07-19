@@ -1,4 +1,14 @@
+/**
+ * Representa un instrumento musical con sus atributos básicos:
+ * nombre, marca, modelo, identificador único y precio.
+ * Proporciona métodos para acceder y modificar estos atributos.
+ * @author Carlos Pérez
+ * @version 1.0.0
+ */
+
+
 public class Instrumento {
+
 
 private String nombreInstrumento;
 private String marca;
@@ -15,6 +25,11 @@ public Instrumento (String nombreInstrumento, String marca, String modelo, Strin
     this.precio= precio;
     }
 
+    /**
+     * Devuelve informacion en forma de cadena del instrumento,
+     * mostrando sus atributos principales de manera legible.
+     * @return Cadena con la información del instrumento.
+     */
     public String toString(){
         return "\nNombre: "+ nombreInstrumento+ "\nMarca: "+ marca+ "\nModelo: "+ modelo+ "\nIdentificador: "+ identificador + "\nPrecio: "+ precio+"€";
     }

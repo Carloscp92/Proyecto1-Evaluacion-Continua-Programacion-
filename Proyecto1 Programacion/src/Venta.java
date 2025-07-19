@@ -1,3 +1,10 @@
+/**
+ * Representa una venta, incluyendo cliente, instrumentos vendidos,
+ * fecha, total e identificador. Proporciona métodos para gestión de venta.
+ * @author Carlos Pérez
+ * @version 1.0.0
+ */
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -35,6 +42,10 @@ public class Venta {
     calcularTotal();
     }
 
+    /**
+     * Calcula y devuelve la suma total de todos los instrumentos añadidos a la venta.
+     * @return Suma total de la venta.
+     */
     public double calcularTotal(){
         double suma=0;
         for(Instrumento i: instrumentoParaVenta) {
@@ -48,6 +59,12 @@ public class Venta {
     public double getTotal() {
             return total;
         }
+
+    /**
+     * Muestra por consola la información detallada de la venta,
+     * incluyendo cliente, instrumentos, cantidades y total.
+     * Internamente utiliza un HashMap para contar la cantidad de instrumentos por tipo.
+     */
 
     public void mostrarInfoVenta(){
         HashMap<String,Integer> cantidadInstrumentos = new HashMap<>();

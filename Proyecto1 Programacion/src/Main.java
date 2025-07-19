@@ -1,7 +1,13 @@
+/**
+ * Sistema gestor de ventas de instrumentos musicales.
+ * Permite gestionar clientes, instrumentos y ventas mediante menús interactivos.
+ * @author Carlos Pérez
+ * @version 1.0.0
+ */
+
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
-
 public class Main {
 
     public static void main(String[] args) {
@@ -49,7 +55,13 @@ public class Main {
     }
 
 //Funciones con los submenus
-private static void submenuClientes(Scanner sc, GestionClientes gClientes){
+
+    /**
+     * Submenú para gestionar clientes, permite alta, baja, modificación y listado.
+     * @param sc Scanner para entrada de datos.
+     * @param gClientes Instancia de gestión de clientes.
+     */
+    private static void submenuClientes(Scanner sc, GestionClientes gClientes){
 
     int opcion=-1;
     do {
@@ -172,7 +184,13 @@ private static void submenuClientes(Scanner sc, GestionClientes gClientes){
             }
     }while(opcion!=0);
 }
-private static void submenuInstrumentos(Scanner sc, GestionInstrumentos gInstrumentos){
+
+    /**
+     * Submenú para gestionar instrumentos, permite alta, baja, modificación y listado.
+     * @param sc  scanner para entrada de datos
+     * @param gInstrumentos instancia de gestion instrumentos
+     */
+    private static void submenuInstrumentos(Scanner sc, GestionInstrumentos gInstrumentos){
 
         int opcion=-1;
         do {
@@ -334,8 +352,16 @@ private static void submenuInstrumentos(Scanner sc, GestionInstrumentos gInstrum
                 }
         }while(opcion!=0);
     }
-private static void submenuVentas(Scanner sc, GestionVentas gVentas, GestionClientes gClientes, GestionInstrumentos gInstrumentos){
-    int opcion=-1;
+
+    /**
+     * Submenú para gestionar ventas, permite realizar, mostrar y eliminar ventas.
+     * @param sc Scanner para entrada de datos.
+     * @param gVentas Instancia de gestión de ventas.
+     * @param gClientes Instancia de gestión de clientes.
+     * @param gInstrumentos Instancia de gestión de instrumentos.
+     */
+    private static void submenuVentas(Scanner sc, GestionVentas gVentas, GestionClientes gClientes, GestionInstrumentos gInstrumentos){
+        int opcion=-1;
     do {
         System.out.println("MENU GESTIÓN DE VENTAS");
         System.out.println("0.Volver al Menu Principal");

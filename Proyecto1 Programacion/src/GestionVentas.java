@@ -1,3 +1,10 @@
+/**
+ * Gestiona una lista de ventas, permitiendo realizar,
+ * eliminar, consultar y mostrar ventas realizadas o filtradas por cliente.
+ * @author Carlos Pérez
+ * @version 1.0.0
+ */
+
 import java.util.ArrayList;
 
 public class GestionVentas {
@@ -30,6 +37,11 @@ public class GestionVentas {
         }
     }
 
+    /**
+     * Elimina una venta de la lista según su identificador.
+     * @param idVenta Identificador de la venta a eliminar.
+     * @return La venta eliminada si existía, o null si no se encontró.
+     */
     public Venta eliminarVenta(String idVenta){
         for(int i = 0; i< ventas.size(); i++){
             Venta v= ventas.get(i);
