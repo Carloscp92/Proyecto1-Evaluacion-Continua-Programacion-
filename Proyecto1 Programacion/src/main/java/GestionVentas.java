@@ -15,6 +15,8 @@ public class GestionVentas {
         this.ventas = new ArrayList<>();
     }
 
+
+
     public boolean noHayventas(){
         return ventas.isEmpty();
     }
@@ -45,7 +47,7 @@ public class GestionVentas {
     public Venta eliminarVenta(String idVenta){
         for(int i = 0; i< ventas.size(); i++){
             Venta v= ventas.get(i);
-            if (v.getIdVenta().equals(idVenta.toLowerCase())) {
+            if (v.getIdVenta().equalsIgnoreCase(idVenta)) {
                 ventas.remove(i);
                 return v;
             }
@@ -55,7 +57,7 @@ public class GestionVentas {
 
     public boolean existeIdVenta(String idVenta){
         for (Venta v : ventas) {
-            if (v.getIdVenta().equals(idVenta.toLowerCase())) {
+            if (v.getIdVenta().equalsIgnoreCase(idVenta)) {
                return true;
             }
         }

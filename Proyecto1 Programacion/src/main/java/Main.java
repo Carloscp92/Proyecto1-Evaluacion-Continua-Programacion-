@@ -4,8 +4,6 @@
  * @author Carlos Pérez
  * @version 1.0.0
  */
-
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Main {
@@ -54,7 +52,6 @@ public class Main {
         sc.close();
     }
 
-//Funciones con los submenus
 
     /**
      * Submenú para gestionar clientes, permite alta, baja, modificación y listado.
@@ -100,7 +97,11 @@ public class Main {
                             }
                         }
                         Cliente nuevoCliente = new Cliente(nombre, dni, telefono, email);
-                        gClientes.altaCliente(nuevoCliente);
+                        Boolean anadido = gClientes.altaCliente(nuevoCliente);
+                        if(anadido){
+                            int numeroCliente = gClientes.getClientes().size();
+                            System.out.println("Cliente "+ numeroCliente + " ("+nuevoCliente.getNombre()+")"+ " añadido con exito");
+                        }
                     }
                     case 2 -> {
                         System.out.println("===BAJA CLIENTE===");

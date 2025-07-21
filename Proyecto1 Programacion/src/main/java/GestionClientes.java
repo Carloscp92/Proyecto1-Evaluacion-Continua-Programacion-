@@ -21,14 +21,13 @@ public class GestionClientes {
      * Comprueba si el DNI ya existe antes de añadirlo a la lista.
      * @param C Cliente a dar de alta.
      */
-    public void altaCliente(Cliente C) {
+    public boolean altaCliente(Cliente C) {
         Cliente c = buscarClienteporDni(C.getDni());
         if(c != null){
-            System.out.println("El cliente ya esta registrado");
+            return false;
         } else{
             clientes.add(C);
-            int numeroCliente = clientes.size();
-            System.out.println("Cliente "+ numeroCliente + " ("+C.getNombre()+")"+ " añadido con exito");
+            return  true;
         }
     }
 
@@ -98,5 +97,8 @@ public class GestionClientes {
             }
         }
         return false;
+    }
+    public ArrayList<Cliente> getClientes() {
+        return clientes;
     }
 }
